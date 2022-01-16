@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- <style> body {background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0.4) 100%), url('https://nutritionreview.org/wp-content/uploads/2017/06/Bacteria-petri-dish.jpg');
+    background-repeat: no-repeat;
+    background-size:cover}     -->
+</style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-18 col-md-12 jumbotron text-center"
+          style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0.3) 100%), url('https://news.mit.edu/sites/default/files/images/202108/MIT-WritingDNA-01-press.jpg');
+          background-size:cover;
+          background-repeat:no-repeat">
+        <h1 class="neontext"
+            style= "color: #533549;
+                  text-shadow: 0 0 7px #fff,
+                    0 0 10px #fff,
+                    0 0 21px #fff,
+                    0 0 42px rgb(184, 71, 71),
+                    0 0 82px rgb(184, 71, 71),
+                    0 0 92px rgb(184, 71, 71),
+                    0 0 102px rgb(184, 71, 71),
+                    0 0 151px rgb(184, 71, 71);">Belly Button Biodiversity Dashboard</h1>
+        <p class="neontext"
+          style= "color: #533549;
+                text-shadow: 0 0 7px #fff,
+                  0 0 10px #fff,
+                  0 0 21px #fff,
+                  0 0 42px rgb(184, 71, 71),
+                  0 0 82px rgb(184, 71, 71),
+                  0 0 92px rgb(184, 71, 71),
+                  0 0 102px rgb(184, 71, 71),
+                  0 0 151px rgb(184, 71, 71);">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+          <p><b>The horizontal bar chart above displays the top 10 bacterial species (OTUs) when an individual's ID is selected 
+                from the drop down menu on the webpage. The x-axis represents the sample values. The y-axis represents the OTU IDs.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+          <p><b>The gauge chart above displays the weekly washing frequency's value, and displays the value as a measure from 0-10 
+                on the progress bar in the gauge chart when an individual's ID is selected from the dropdown menu.
+          </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+          <p><b>The bubble chart above displays the following information when an individual's ID is selected from the dropdown menu:
+              The x-axis represents the OTU IDs; the y-axis represents the sample values; the marker size is based on the sample values;
+              the marker colors are based on the OTU IDs.
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
